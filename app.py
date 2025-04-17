@@ -32,7 +32,14 @@ if uploaded_file:
 
     st.subheader("Trade Signals")
     signals = generate_trade_signals(df, zones, use_volume=use_volume, session_start=session_start)
-    st.write(signals.head())
+    import pandas as pd
+
+signals_df = pd.DataFrame(signals)
+
+if not signals_df.empty:
+    st.write(signals_df.head())
+else:
+    st.warning("No trade signals were generated.")
 
     st.subheader("Backtest Performance")
     trades, equity = backtest_strategy(df, signals, sl_pct, tp_pct)
