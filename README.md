@@ -13,6 +13,6 @@ A web-based assistant for trading NAS100 using support/resistance breakout strat
 
 ## Setup
 ```bash
-chmod +x setup.sh
-./setup.sh
+chmod +x streamlit_setup.sh
+./streamlit_setup.sh
 ```
