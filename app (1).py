@@ -35,7 +35,7 @@ if uploaded_file:
     else:
         st.warning("No trade signals were generated.")
 
-    result, equity = backtest_strategy(df, signals, sl_pct, tp_pct)
+result, equity = backtest_strategy(df, signals_df, sl_pct, tp_pct)
 
     st.subheader("Trade Visualization")
     st.pyplot(plot_trades(df, signals, zones))
